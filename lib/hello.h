@@ -3,7 +3,13 @@
 #ifndef __HELLO_H__
 #define __HELLO_H__
 
-class Hello
+#ifdef _WIN32
+#  define EXPORTED __declspec( dllexport )
+#else
+#  define EXPORTED
+#endif
+
+class EXPORTED Hello
 {
 public:
     std::string print();
