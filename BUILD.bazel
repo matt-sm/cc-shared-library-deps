@@ -1,6 +1,5 @@
 cc_library(
     name = "hello",
-    hdrs = ["//lib:hello.h"],
     srcs = ["//lib:hello.cpp", "//lib:hello.h"],
 )
 
