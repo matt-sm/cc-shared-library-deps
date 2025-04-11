@@ -1,0 +1,5 @@
+exports_files([
+    "test_hello2.cpp",
+    "hello2.cpp",
+    "hello2.h",
+])

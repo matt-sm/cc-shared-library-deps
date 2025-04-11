@@ -1,0 +1,23 @@
+cc_library(
+    name = "hello",
+    hdrs = ["//lib:hello.h"],
+    srcs = ["//lib:hello.cpp", "//lib:hello.h"],
+)
+
+cc_shared_library(
+    name = "hello_shared",
+    deps = ["hello"],
+)
+
+cc_library(
+    name = "hello2",
+    srcs = ["//lib2:hello2.cpp", "//lib2:hello2.h"],
+    includes = ["lib"],
+    deps = [":hello"],
+)
+
+cc_shared_library(
+    name = "hello2_shared",
+    dynamic_deps = ["hello_shared"],
+    deps = [":hello2"],
+)
